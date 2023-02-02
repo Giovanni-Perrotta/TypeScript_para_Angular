@@ -100,3 +100,16 @@ class Pessoa {
 }
 const p = new Pessoa(1, "Kayky");
 console.log(p.addMensagem());
+//classes
+class Personagem {
+    constructor(personagem, forca, skill) {
+        this.personagem = personagem;
+        this.forca = forca;
+        this.skill = skill;
+    }
+    attack() {
+        console.log(`Attack with ${this.forca} points`);
+    }
+}
+const p1 = new Personagem("Ryu", 10, 90);
+p1.attack();

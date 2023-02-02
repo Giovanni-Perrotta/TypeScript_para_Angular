@@ -144,3 +144,23 @@ class Pessoa implements robot2{
 const p = new Pessoa (1, "Kayky")
 
 console.log(p.addMensagem())
+
+//classes
+class Personagem {
+    personagem?: string     // ? = opicional 
+    forca: number
+    skill: number
+    constructor(personagem: string, forca: number, skill: number){
+        this.personagem = personagem
+        this.forca = forca
+        this.skill = skill
+    }
+
+    attack(): void{
+        console.log(`Attack with ${this.forca} points`)
+    }
+}
+
+const p1 = new Personagem("Ryu",10, 90);
+
+p1.attack()

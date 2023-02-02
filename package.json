@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "name": "typescript_para_angular",
+  "description": "Projeto do curso DIO\r Projeto onde exemplifica as funções e funcionalidades do typescript, transpilando para JavaScript e exemplificando como usar isso no Angular.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsc && node typescript/build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giovanni-Perrotta/TypeScript_para_Angular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Giovanni-Perrotta/TypeScript_para_Angular/issues"
+  },
+  "homepage": "https://github.com/Giovanni-Perrotta/TypeScript_para_Angular#readme"
+}
