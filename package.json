@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.5"
   },
   "name": "typescript_para_angular",
@@ -8,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx tsc && node typescript/build/index.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only typescript/src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

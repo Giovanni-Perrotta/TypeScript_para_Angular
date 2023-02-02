@@ -213,3 +213,5 @@ const numArray = concaatArray<number[]>([1,2,5], [3,4,8])
 // numArray.push("oba")     //any da problema pois permite colocar uma strig num array de numeros | com <number[]> ele só permite numeros
 
 console.log(numArray)
+
+//decorators
