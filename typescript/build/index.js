@@ -113,3 +113,34 @@ class Personagem {
 }
 const p1 = new Personagem("Ryu", 10, 90);
 p1.attack();
+//data modifiers
+//public, private, protected
+class Pokemon {
+    constructor(pokemon, forca, skill) {
+        this.id = 1; //classes que herdam podem ver
+        this.pokemon = pokemon;
+        this.forca = forca;
+        this.skill = skill;
+    }
+    attack() {
+        console.log(`${this.pokemon} attack with ${this.forca} points`);
+    }
+}
+const pokemon = new Pokemon("Pikachu", 10, 90);
+pokemon.attack();
+//subclasses
+class Evolucao extends Pokemon {
+    constructor(pokemon, forca, skill, golpe) {
+        super(pokemon, forca, skill);
+        this.golpe = golpe;
+    }
+}
+const evolucao = new Evolucao("Raichu", 30, 100, "Thunder");
+evolucao.attack();
+//generics
+function concaatArray(...itens) {
+    return new Array().concat(...itens);
+}
+const numArray = concaatArray([1, 2, 5], [3, 4, 8]);
+// numArray.push("oba")     //any da problema pois permite colocar uma strig num array de numeros | com <number[]> ele só permite numeros
+console.log(numArray);

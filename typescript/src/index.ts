@@ -164,3 +164,52 @@ class Personagem {
 const p1 = new Personagem("Ryu",10, 90);
 
 p1.attack()
+
+//data modifiers
+//public, private, protected
+
+class Pokemon {
+    public pokemon: string      //mesmo que não colocar nada, todos veem 
+    private forca: number       //só pode ser acessado dentro dessa classe
+    skill: number
+    protected id: number = 1    //classes que herdam podem ver
+    constructor(pokemon: string, forca: number, skill: number){
+        this.pokemon = pokemon
+        this.forca = forca
+        this.skill = skill
+    }
+
+    attack(): void{
+        console.log(`${this.pokemon} attack with ${this.forca} points`)
+    }
+}
+
+const pokemon = new Pokemon("Pikachu",10, 90);
+
+pokemon.attack()
+
+//subclasses
+
+class Evolucao extends Pokemon{
+    golpe: string
+    constructor(pokemon: string, forca: number, skill: number, golpe: string){
+        super(pokemon, forca,skill)
+        this.golpe = golpe
+
+
+    }
+}
+const evolucao = new Evolucao("Raichu", 30, 100, "Thunder")
+
+evolucao.attack()
+
+//generics
+function concaatArray<T>(...itens: T[]): T[]{
+    return new Array().concat(...itens)
+}
+
+const numArray = concaatArray<number[]>([1,2,5], [3,4,8])
+
+// numArray.push("oba")     //any da problema pois permite colocar uma strig num array de numeros | com <number[]> ele só permite numeros
+
+console.log(numArray)
