@@ -3,6 +3,8 @@
 //     arma: string
 // }
 
+import { validateHeaderValue } from "http"
+
 
 // function apex (lenda: legend){
 //     console.log(lenda)
@@ -214,4 +216,59 @@ const numArray = concaatArray<number[]>([1,2,5], [3,4,8])
 
 console.log(numArray)
 
-//decorators
+//decorators    gatilho que executa a ação
+// function ExibirNome(target: any){
+//     console.log(target)
+// }
+
+// @ExibirNome
+// class Funcionario {}
+
+// @ExibirNome
+// class Bola{}
+
+//class decorator
+
+// function APIVersion(version: string){
+//     return (target: any) =>{
+//         Object.assign(target.prototype, {__version: version})
+//     }
+// }
+
+// @APIVersion("1.10")
+// class Api{}
+
+// const api = new Api()
+// console.log(api.__version)
+
+function tamanhoMin(tamanho: number) {
+    return (target: any, key: string) => {
+        let _value = target[key]
+
+        const getter = () => _value
+        const setter = (value: string) => {
+            if (value.length < tamanho) {
+                throw new Error(`Tamanho menor que ${tamanho}`)
+            }else{
+                _value = value
+            }
+        }
+
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        })
+    }
+}
+
+class Api {
+    @tamanhoMin(3)
+    name: string
+
+    constructor(name:string) {
+        this.name = name
+    }
+}
+
+const api = new Api("Opa")
+console.log(api.name)
